@@ -1,14 +1,15 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import TodoList from './components/TodoList';
 
 function App() {
-  const [description, setDescription] = useState('クリック前の表示');
   return (
-   <div>
-    ゼロから始めるReact入門
-    <List title="取り扱い言語一覧" />
-   </div>
+    <div className="App">
+      <h1>Todo App</h1>
+      <TodoList />
+    </div>
   );
 }
 
 export default App;
+
