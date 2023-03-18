@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './TodoForm.css';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState('');
@@ -12,17 +13,17 @@ const TodoForm = ({ addTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="todo-form">
-      <input
-        type="text"
+    <form onSubmit={handleSubmit}>
+      <TextField
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Add a new todo"
-        className="todo-input"
+        variant="outlined"
+        size="small"
       />
-      <button type="submit" className="todo-add-button">
+      <Button type="submit" variant="contained" color="primary">
         Add
-      </button>
+      </Button>
     </form>
   );
 };

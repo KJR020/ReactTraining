@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
-import './TodoList.css';
+import List from '@mui/material/List';
+import Container from '@mui/material/Container';
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -31,18 +32,20 @@ const TodoList = () => {
   };
 
   return (
-    <div className="todo-container">
+    <Container maxWidth="sm">
       <TodoForm addTodo={addTodo} />
-      {todos.map((todo) => (
-        <Todo
-          key={todo.id}
-          todo={todo}
-          toggleComplete={toggleComplete}
-          deleteTodo={deleteTodo}
-          editTodo={editTodo}
-        />
-      ))}
-    </div>
+      <List>
+        {todos.map((todo) => (
+          <Todo
+            key={todo.id}
+            todo={todo}
+            toggleComplete={toggleComplete}
+            deleteTodo={deleteTodo}
+            editTodo={editTodo}
+          />
+        ))}
+      </List>
+    </Container>
   );
 };
 
