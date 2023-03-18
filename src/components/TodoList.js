@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
+import './TodoList.css';
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -30,7 +31,7 @@ const TodoList = () => {
   };
 
   return (
-    <div>
+    <div className="todo-container">
       <TodoForm addTodo={addTodo} />
       {todos.map((todo) => (
         <Todo

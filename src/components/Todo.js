@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaCheck, FaTrash} from 'react-icons/fa'
+import './Todo.css'
 
 const Todo = ({ todo, toggleComplete, deleteTodo, editTodo }) => {
     const handleCheckboxClick = () => {
