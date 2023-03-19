@@ -9,7 +9,8 @@ const Jumbotron = () => {
         maxWidth="md"
         className="jumbotron-container"
         style={{
-          backgroundImage: "url(/img/00540-442527059.png)",
+          backgroundImage:`url(${process.env.PUBLIC_URL}/img/00540-442527059.png)`
+,
         }}
       >
         <Typography className='jumbotron-text' variant="h2" component="h1" gutterBottom>
