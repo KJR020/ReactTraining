@@ -1,0 +1,17 @@
+.jumbotron-container {
+  width: 90vw;
+  background-size: cover;
+    background-position: top;
+    background-color: #cfe8fc;
+    position: relative;
+    padding: 2rem;
+  }
+
+  
+.jumbotron-text {
+  position: relative;
+  text-align: left;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: white;
+}

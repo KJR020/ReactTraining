@@ -3,6 +3,7 @@ import Todo from './Todo';
 import TodoForm from './TodoForm';
 import List from '@mui/material/List';
 import Container from '@mui/material/Container';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -36,13 +37,26 @@ const TodoList = () => {
       <TodoForm addTodo={addTodo} />
       <List>
         {todos.map((todo) => (
-          <Todo
-            key={todo.id}
-            todo={todo}
-            toggleComplete={toggleComplete}
-            deleteTodo={deleteTodo}
-            editTodo={editTodo}
-          />
+          <TransitionGroup>
+          {todos.map((todo) => (
+            <CSSTransition key={todo.id} timeout={300} classNames="item">
+              <Todo
+                key={todo.id}
+                todo={todo}
+                toggleComplete={toggleComplete}
+                deleteTodo={deleteTodo}
+                editTodo={editTodo}
+              />
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
+          // <Todo
+          //   key={todo.id}
+          //   todo={todo}
+          //   toggleComplete={toggleComplete}
+          //   deleteTodo={deleteTodo}
+          //   editTodo={editTodo}
+          // />
         ))}
       </List>
     </Container>
